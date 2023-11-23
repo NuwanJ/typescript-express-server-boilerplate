@@ -1,7 +1,8 @@
 import express from "express";
 import * as bodyParser from "body-parser";
 import appLogger from "./middlewares/logger";
-import router, { defaultRoute, errorHandler } from "./routes/";
+import router, { defaultRoute } from "./routes/";
+import errorHandler from "./middlewares/errorHandler";
 import cors from "cors";
 
 export const app = express();
