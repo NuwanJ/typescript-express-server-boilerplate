@@ -1,18 +1,21 @@
-This is a simple TypeScript Express Boilerplate Template 
+This is a simple TypeScript Express Boilerplate Template
 
 ## Useful Commands
 
-##### Install Dependencies 
+##### Install Dependencies
+
 ```bash
 npm install
 ```
 
-##### Run development server 
+##### Run development server
+
 ```bash
 npm run dev
 ```
 
-##### Build and run the production server 
+##### Build and run the production server
+
 ```bash
 npm run build
 npm run start
