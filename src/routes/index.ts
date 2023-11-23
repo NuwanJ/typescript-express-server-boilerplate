@@ -10,12 +10,7 @@ router.get("/test", function (req, res) {
 router.use("/hello", helloWorldRoutes);
 
 // Custom error handler
-export function errorHandler(
-    err: Error,
-    req: Request,
-    res: Response,
-    next: NextFunction
-) {
+export function errorHandler(err: Error, req: Request, res: Response, next: NextFunction) {
     console.error(err.stack);
     res.status(500).json({ error: err.message });
 }
