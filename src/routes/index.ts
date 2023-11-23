@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import helloWorldRoutes from "./hello.route";
+import starWarRoutes from "./star-wars.route";
 
 const router = express.Router();
 
@@ -8,14 +9,10 @@ router.get("/test", function (req, res) {
 });
 
 router.use("/hello", helloWorldRoutes);
+router.use("/star-wars", starWarRoutes);
 
 // Custom error handler
-export function errorHandler(
-    err: Error,
-    req: Request,
-    res: Response,
-    next: NextFunction
-) {
+export function errorHandler(err: Error, req: Request, res: Response, next: NextFunction) {
     console.error(err.stack);
     res.status(500).json({ error: err.message });
 }
