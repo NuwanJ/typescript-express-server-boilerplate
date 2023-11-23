@@ -13,8 +13,32 @@ export type Character = {
     url: string;
 };
 
+export type Planet = {
+    climate: string;
+    created: string;
+    diameter: number;
+    edited: string;
+    films: string[];
+    gravity: number;
+    name: string;
+    orbital_period: number;
+    population: number;
+    residents: string[];
+    rotation_period: number;
+    surface_water: number;
+    terrain: string;
+    url: string;
+};
+
 export type CharacterResponse = {
     count: number;
-    next: string | null;
+    next?: string;
+    previous?: string;
     results: Character[];
+};
+export type PlanetResponse = {
+    count: number;
+    next?: string;
+    previous?: string;
+    results: Planet[];
 };

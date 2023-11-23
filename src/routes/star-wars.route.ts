@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { getCharacters } from "../controllers/starwars.controller";
-import { Character, CharacterResponse } from "../types/star-war.types";
+import { getCharacters, getPlanets } from "../controllers/starwars.controller";
 
 const router = Router();
 
@@ -11,6 +10,11 @@ router.get("/", (req, res) => {
 router.get("/characters", async (req, res) => {
     const characters = await getCharacters();
     res.send(characters);
+});
+
+router.get("/planets", async (req, res) => {
+    const planets = await getPlanets();
+    res.send(planets);
 });
 
 export default router;
