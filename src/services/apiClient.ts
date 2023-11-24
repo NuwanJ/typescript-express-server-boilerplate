@@ -20,7 +20,7 @@ export class APIClient {
     baseURL: string;
     timeout: number;
     successStatusCodes = [200, 201, 202];
-    headers: object = {};
+    headers: { [key: string]: any } = {};
 
     constructor(baseURL: string, timeout: number = 30000) {
         this.baseURL = baseURL;
@@ -61,7 +61,7 @@ export class APIClient {
         method: HTTPMethod,
         url: string,
         body: unknown,
-        parameters: object,
+        parameters: object | undefined,
         extraHeaders: object = {}
     ): Promise<AxiosResponse> {
         const requestConfig: AxiosRequestConfig = {

@@ -6,7 +6,7 @@
     "scripts": {
         "test": "jest --verbose --coverage",
         "build": "tsc",
-        "dev": "PORT=3000 nodemon ./src/server.ts",
+        "dev": "nodemon ./src/server.ts",
         "start": "node ./dist/server.js",
         "format": "prettier --write \"**/*.+(ts|js|jsx|json|yml|yaml|css|md)\""
     },

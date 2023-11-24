@@ -18,7 +18,6 @@ router.get("/name/:name", (req: Request, res: Response) => {
     res.send({ msg: `Hello ${name}` });
 });
 
-
 router.post(
     "/:version/register",
     [
@@ -32,7 +31,7 @@ router.post(
         query("udid").optional().isBoolean(),
         param("version").isIn(["v1", "v2"]),
     ],
-    (req, res) => {
+    (req: Request, res: Response) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
@@ -40,7 +39,7 @@ router.post(
 
         const { username, email, password } = req.body;
         const { udid } = req.query;
-        const { version } = req.param;
+        const { version } = req.params;
 
         // Perform operations with validated data, e.g., save to database
         console.log(username, password, email, udid, version);

@@ -1,13 +1,9 @@
 import express, { Request, Response, NextFunction } from "express";
-import helloWorldRoutes from "./hello.route";
+import characterContinentRoutes from "./character-continent.routes";
 
 const router = express.Router();
 
-router.get("/test", function (req, res) {
-    res.send({ msg: "Hello world !" });
-});
-
-router.use("/hello", helloWorldRoutes);
+router.use("/character-continent", characterContinentRoutes);
 
 // Default route
 export function defaultRoute(req: Request, res: Response, next: NextFunction) {
