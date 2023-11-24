@@ -10,7 +10,9 @@
         "target": "es2017",
         "outDir": "./dist",
         "baseUrl": "./lib",
-        "lib": ["es2017", "dom", "esnext"]
+        "lib": ["es2017", "dom", "esnext"],
+
+        "strict": true
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]
