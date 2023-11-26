@@ -2,12 +2,22 @@
 
 This is a simple TypeScript Express Boilerplate Template
 
-## Useful Commands
+## Setup Guide
 
-##### Install Dependencies
+1. Install Node dependencies
 
 ```bash
 npm install
+```
+
+2. Create a `.env` file in the root of the project and fill the details as in the sample, `.env.sample` file.
+
+## Useful Commands
+
+##### Format Codes
+
+```bash
+npm run format
 ```
 
 ##### Run development server
