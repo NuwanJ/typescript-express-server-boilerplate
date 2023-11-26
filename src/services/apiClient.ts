@@ -20,14 +20,14 @@ export class APIClient {
     baseURL: string;
     timeout: number;
     successStatusCodes = [200, 201, 202];
-    headers: object = {};
+    headers: { [key: string]: any } = {};
 
     constructor(baseURL: string, timeout: number = 30000) {
         this.baseURL = baseURL;
         this.timeout = timeout;
     }
 
-    async get(url: string, parameters?: object, headers?: object): Promise<object> {
+    async get(url: string, parameters: object = {}, headers?: object): Promise<object> {
         const response = await this.request(HTTPMethod.GET, url, null, parameters, headers);
         return response.data;
     }
@@ -35,24 +35,24 @@ export class APIClient {
     async post(
         url: string,
         body: unknown,
-        parameters?: object,
+        parameters: object = {},
         extraHeaders: object = {}
     ): Promise<object> {
         const response = await this.request(HTTPMethod.POST, url, body, parameters, extraHeaders);
         return response.data;
     }
 
-    async put(url: string, body: object, parameters?: object): Promise<object> {
+    async put(url: string, body: object, parameters: object = {}): Promise<object> {
         const response = await this.request(HTTPMethod.PUT, url, body, parameters);
         return response.data;
     }
 
-    async patch(url: string, body: object, parameters?: object): Promise<object> {
+    async patch(url: string, body: object, parameters: object = {}): Promise<object> {
         const response = await this.request(HTTPMethod.PATCH, url, body, parameters);
         return response.data;
     }
 
-    async delete(url: string, parameters?: object, body?: object): Promise<object> {
+    async delete(url: string, parameters: object = {}, body?: object): Promise<object> {
         const response = await this.request(HTTPMethod.DELETE, url, body, parameters);
         return response.data;
     }
